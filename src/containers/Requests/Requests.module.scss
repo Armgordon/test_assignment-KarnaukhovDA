@@ -1,6 +1,38 @@
-.Bids{
+.Requests{
   padding: 20px;
   height: 100vh;
   background: #beefff;
+  position: relative;
+}
 
+.resizeable{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 110px;
+  overflow-x: auto;
+
+
+  &__inner{
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    min-width: 350px;
+    width: 100%;
+  }
+}
+
+.resizer{
+  position: relative;
+  background: #2f87a2;
+  cursor: col-resize;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 3px;
+}
+
+.noResizeable{
+  display: flex;
 }

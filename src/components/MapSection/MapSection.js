@@ -1,24 +1,13 @@
 import React from 'react';
-import classes from './Map.module.scss'
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
+import classes from './MapSection.module.scss'
+import Map1 from "../Map1/Map1";
 
-const Map = () => {
+const MapSection = () => {
     return (
-        <div className={classes.Map}>
-            <h1>Карта</h1>
-            <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-                <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                <Marker position={[51.505, -0.09]}>
-                    <Popup>
-                        A pretty CSS3 popup. <br /> Easily customizable.
-                    </Popup>
-                </Marker>
-            </MapContainer>
-        </div>
+        <>
+            <Map1 className={classes.MapSection}/>
+        </>
     );
 };
 
-export default Map;
+export default MapSection;
