@@ -39,6 +39,7 @@ const RequestsTable = () => {
     }
 
     function isCurrentRowSelected(record){
+        selectedRowKeysArray.current = [record.key]
         // prevent repeated click
         if (currentRequest !== record.name) {
             requestClickHandler(record)
@@ -94,7 +95,6 @@ const RequestsTable = () => {
                 onRow={(record)=> {
                      return {
                         onClick: () => {
-                            selectedRowKeysArray.current = [record.key]
                             isCurrentRowSelected(record)
                         }
                     }
