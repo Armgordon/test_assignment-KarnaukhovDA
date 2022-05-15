@@ -28,6 +28,7 @@ const RequestsTable = () => {
         allPoints.filter((point)=>{
             if (point.name === rowData.getLoadPoint.pointName) return point
             if (point.name === rowData.leaveLoadPoint.pointName) return point
+                return false
         }).forEach((foundedPoint) => {
             if (foundedPoint.name === rowData.getLoadPoint.pointName){
                 payload.startPoint = {lat:foundedPoint.lat,long:foundedPoint.long}

@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import reduxThunk from 'redux-thunk'
 
 //Redux add
 import {Provider} from 'react-redux'
@@ -11,7 +10,7 @@ import rootReducer from "./store/reducers/rootReducer";
 import createSagaMiddleware from 'redux-saga'
 
 //Antd add
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css';
 import {sagaWatcher} from "./store/saga/sagas";
 
 import './index.css';
@@ -29,7 +28,6 @@ const store = createStore(
     rootReducer,
     composeEnhancers(
         applyMiddleware(
-            reduxThunk,
             saga
         )
     )

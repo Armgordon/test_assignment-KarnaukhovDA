@@ -9,24 +9,25 @@ const Map1 = () => {
 
 
     return (
-        <MapContainer center={mapState.center} zoom={mapState.zoom} scrollWheelZoom={mapState.isScrollWheelZoom} className={classes.Map1}>
+        <MapContainer
+            center={mapState.center}
+            zoom={mapState.zoom}
+            scrollWheelZoom={mapState.isScrollWheelZoom}
+            className={classes.Map1}>
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             <Polyline pathOptions={mapState.polylineColor} positions={trip.waypoint} />,
-            {trip.currentRequest
-                ? (<>
+            {trip.currentRequest &&
+                (<>
                     <Marker position={[trip.startPoint.lat, trip.startPoint.long]}>
                         <Popup> Start point </Popup>
                     </Marker>,
                     <Marker position={[trip.endPoint.lat, trip.endPoint.long]}>
-                    <Popup> End Point </Popup>
+                        <Popup> End Point </Popup>
                     </Marker>
                 </>)
-                : <Marker position={[55.762956, 37.781818]}>
-                    <Popup> INTELOGIS </Popup>
-                </Marker>
             }
         </MapContainer>
     );
